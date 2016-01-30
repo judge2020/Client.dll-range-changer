@@ -1,0 +1,6 @@
+c:\users\hunte_000\documents\visual studio 2015\Projects\Client.dll manager\Client.dll manager\bin\Debug\Client.dll manager.exe.config
+c:\users\hunte_000\documents\visual studio 2015\Projects\Client.dll manager\Client.dll manager\bin\Debug\Client.dll manager.exe
+c:\users\hunte_000\documents\visual studio 2015\Projects\Client.dll manager\Client.dll manager\bin\Debug\Client.dll manager.pdb
+c:\users\hunte_000\documents\visual studio 2015\Projects\Client.dll manager\Client.dll manager\obj\Debug\Client.dll manager.csprojResolveAssemblyReference.cache
+c:\users\hunte_000\documents\visual studio 2015\Projects\Client.dll manager\Client.dll manager\obj\Debug\Client.dll manager.exe
+c:\users\hunte_000\documents\visual studio 2015\Projects\Client.dll manager\Client.dll manager\obj\Debug\Client.dll manager.pdb
