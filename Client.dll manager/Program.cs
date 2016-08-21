@@ -10,14 +10,26 @@ namespace Client.dll_manager
     {
         private static bool _did32Succeed;
         private static bool _did64Succeed;
-        private static readonly string Dota2Directory = ConfigurationManager.AppSettings["directory"];
-        private static readonly string Win32Path = Dota2Directory + @"\game\dota\bin\win32\client.dll";
-        private static readonly string Win64Path = Dota2Directory + @"\game\dota\bin\win64\client.dll";
-        private static readonly string Game32Path = Dota2Directory + @"\game\bin\win32\dota2.exe";
-        private static readonly string Game64Path = Dota2Directory + @"\game\bin\win64\dota2.exe";
+        private static string Dota2Directory = ConfigurationManager.AppSettings["directory"];
+        private static string Win32Path;
+        private static string Win64Path;
+        private static string Game32Path;
+        private static string Game64Path;
+
         static void Main()
         {
-            Console.WriteLine("Dota 2 range changer!");
+
+            if (Dota2Directory == null)
+                Dota2Directory = @"C:\Program Files (x86)\Steam\steamapps\common\dota 2 beta";
+
+            Win32Path = Dota2Directory + @"\game\dota\bin\win32\client.dll";
+            Win64Path = Dota2Directory + @"\game\dota\bin\win64\client.dll";
+            Game32Path = Dota2Directory + @"\game\bin\win32\dota2.exe";
+            Game64Path = Dota2Directory + @"\game\bin\win64\dota2.exe";
+
+
+
+        Console.WriteLine("Dota 2 range changer!");
             Console.WriteLine(@"     ");
             Console.WriteLine(@"     _           _            ____   ___ ____   ___  ");
             Console.WriteLine(@"    | |_   _  __| | __ _  ___|___ \ / _ \___ \ / _ \ ");
