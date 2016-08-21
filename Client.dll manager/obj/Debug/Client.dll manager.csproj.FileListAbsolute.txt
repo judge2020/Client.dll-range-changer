@@ -4,3 +4,15 @@ c:\users\hunte_000\documents\visual studio 2015\Projects\Client.dll manager\Clie
 c:\users\hunte_000\documents\visual studio 2015\Projects\Client.dll manager\Client.dll manager\obj\Debug\Client.dll manager.csprojResolveAssemblyReference.cache
 c:\users\hunte_000\documents\visual studio 2015\Projects\Client.dll manager\Client.dll manager\obj\Debug\Client.dll manager.exe
 c:\users\hunte_000\documents\visual studio 2015\Projects\Client.dll manager\Client.dll manager\obj\Debug\Client.dll manager.pdb
+C:\Users\judge2020\Source\Repos\Client.dll-range-changer\Client.dll manager\bin\Debug\Client.dll manager.exe.config
+C:\Users\judge2020\Source\Repos\Client.dll-range-changer\Client.dll manager\obj\Debug\Client.dll manager.exe
+C:\Users\judge2020\Source\Repos\Client.dll-range-changer\Client.dll manager\obj\Debug\Client.dll manager.pdb
+C:\Users\judge2020\Source\Repos\Client.dll-range-changer\Client.dll manager\bin\Debug\Client.dll manager.exe
+C:\Users\judge2020\Source\Repos\Client.dll-range-changer\Client.dll manager\bin\Debug\Client.dll manager.pdb
+C:\Users\judge2020\Source\Repos\Client.dll-range-changer\Client.dll manager\obj\Debug\Client.dll manager.csprojResolveAssemblyReference.cache
+C:\Users\judge2020\Source\Repos\aaaaaaaaaaa\Client.dll-range-changer\Client.dll manager\bin\Debug\Client.dll manager.exe.config
+C:\Users\judge2020\Source\Repos\aaaaaaaaaaa\Client.dll-range-changer\Client.dll manager\obj\Debug\Client.dll manager.exe
+C:\Users\judge2020\Source\Repos\aaaaaaaaaaa\Client.dll-range-changer\Client.dll manager\obj\Debug\Client.dll manager.pdb
+C:\Users\judge2020\Source\Repos\aaaaaaaaaaa\Client.dll-range-changer\Client.dll manager\bin\Debug\Client.dll manager.exe
+C:\Users\judge2020\Source\Repos\aaaaaaaaaaa\Client.dll-range-changer\Client.dll manager\bin\Debug\Client.dll manager.pdb
+C:\Users\judge2020\Source\Repos\aaaaaaaaaaa\Client.dll-range-changer\Client.dll manager\obj\Debug\Client.dll manager.csprojResolveAssemblyReference.cache

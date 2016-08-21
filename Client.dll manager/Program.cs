@@ -1,7 +1,8 @@
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Text;
 using System.IO;
+using System.Configuration;
 
 namespace Client.dll_manager
 {
@@ -9,10 +10,12 @@ namespace Client.dll_manager
     {
         private static bool _did32Succeed;
         private static bool _did64Succeed;
-        private static string win32path = @"C:\Program Files (x86)\Steam\steamapps\common\dota 2 beta\game\dota\bin\win32\client.dll";
-        private static string win64path = @"C:\Program Files (x86)\Steam\steamapps\common\dota 2 beta\game\dota\bin\win64\client.dll";
-
-        static void Main(string[] args)
+        private static readonly string Dota2Directory = ConfigurationManager.AppSettings["directory"];
+        private static readonly string Win32Path = Dota2Directory + @"\game\dota\bin\win32\client.dll";
+        private static readonly string Win64Path = Dota2Directory + @"\game\dota\bin\win64\client.dll";
+        private static readonly string Game32Path = Dota2Directory + @"\game\bin\win32\dota2.exe";
+        private static readonly string Game64Path = Dota2Directory + @"\game\bin\win64\dota2.exe";
+        static void Main()
         {
             Console.WriteLine("Dota 2 range changer!");
             Console.WriteLine(@"     ");
@@ -27,17 +30,17 @@ namespace Client.dll_manager
             Console.WriteLine("I take no responsibility for any bans that may occur using this software. This is purely for exposing this exploit.");
             Console.ResetColor();
             
-            if (!File.Exists(win32path))
+            if (!File.Exists(Win32Path))
             {
                 //didn't find win32 dll. May handle this better in the future to allow inputing of the path by the user but im lazy
-                Console.WriteLine("I can't seem to find the win32 client.dll. Try building this program youself and changing the filepaths.");
+                Console.WriteLine("I can't seem to find the win32 client.dll. Change the filepath to the \"dota 2 beta\" folder in \"Client.dll manager.exe.config\".");
                 Console.ReadLine();
                 Environment.Exit(0);
             }
-            if (!File.Exists(win64path))
+            if (!File.Exists(Win64Path))
             {
                 //didn't find win64 dll. May handle this better in the futre to allow inputing of the path by the user but im lazy
-                Console.WriteLine("I can't seem to find the win64 client.dll. Try building this program youself and changing the filepaths.");
+                Console.WriteLine("I can't seem to find the win64 client.dll. Change the filepath to the \"dota 2 beta\" folder in \"Client.dll manager.exe.config\".");
                 Console.ReadLine();
                 Environment.Exit(0);
             }
@@ -77,19 +80,19 @@ namespace Client.dll_manager
 
             Console.WriteLine("Backing up client.dll files. To revert, rename \"Client.dll.old\" back to \"client.dll\"");
 
-            File.Copy(win32path, win32path + ".old", true);
-            File.Copy(win64path, win64path + ".old", true);
+            File.Copy(Win32Path, Win32Path + ".old", true);
+            File.Copy(Win64Path, Win64Path + ".old", true);
 
 
             Console.WriteLine("Now trying to edit the DLL files...");
 
             //try to replace the old with the new in win32
-            string text = File.ReadAllText(win32path, Encoding.Default);
+            string text = File.ReadAllText(Win32Path, Encoding.Default);
             text = text.Replace(asstring, asstring2);
-            File.WriteAllText(win32path, text, Encoding.Default);
+            File.WriteAllText(Win32Path, text, Encoding.Default);
             //check for success win32
             System.Threading.Thread.Sleep(250); //wait so changes are made if it did succeed
-            string newtext = File.ReadAllText(win32path, Encoding.Default);
+            string newtext = File.ReadAllText(Win32Path, Encoding.Default);
             int newtextcheck = newtext.IndexOf(asstring2);
 
             if (newtextcheck == -1)
@@ -104,12 +107,12 @@ namespace Client.dll_manager
 
 
 
-            string text2 = File.ReadAllText(win64path, Encoding.Default);
+            string text2 = File.ReadAllText(Win64Path, Encoding.Default);
             text2 = text2.Replace(asstring, asstring2);
-            File.WriteAllText(win64path, text2, Encoding.Default);
+            File.WriteAllText(Win64Path, text2, Encoding.Default);
             //check for success win64
             System.Threading.Thread.Sleep(250);
-            string newtext2 = File.ReadAllText(win64path, Encoding.Default);
+            string newtext2 = File.ReadAllText(Win64Path, Encoding.Default);
             int newtextcheck2 = newtext2.IndexOf(asstring2);
 
             if (newtextcheck2 == -1)
@@ -132,9 +135,9 @@ namespace Client.dll_manager
                 if (double.TryParse(input1, out inputAsNumber1))
                 {
                     if (inputAsNumber1 == 1)
-                        Process.Start(@"C:\Program Files (x86)\Steam\steamapps\common\dota 2 beta\game\bin\win32\dota2.exe");
+                        Process.Start(Game32Path);
                     if (inputAsNumber1 == 2)
-                        Process.Start(@"C:\Program Files (x86)\Steam\steamapps\common\dota 2 beta\game\bin\win64\dota2.exe");
+                        Process.Start(Game64Path);
                 }
                 Environment.Exit(0);
             }
@@ -146,7 +149,7 @@ namespace Client.dll_manager
                 if (double.TryParse(input1, out inputAsNumber1))
                 {
                     if (inputAsNumber1 == 1)
-                        Process.Start(@"C:\Program Files (x86)\Steam\steamapps\common\dota 2 beta\game\bin\win64\dota2.exe");
+                        Process.Start(Game64Path);
                 }
                 Environment.Exit(0);
             }
@@ -158,7 +161,7 @@ namespace Client.dll_manager
                 if (double.TryParse(input1, out inputAsNumber1))
                 {
                     if (inputAsNumber1 == 1)
-                        Process.Start(@"C:\Program Files (x86)\Steam\steamapps\common\dota 2 beta\game\bin\win32\dota2.exe");
+                        Process.Start(Game32Path);
                 }
                 Environment.Exit(0);
             }
